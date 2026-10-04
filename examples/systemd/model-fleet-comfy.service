@@ -1,0 +1,13 @@
+[Unit]
+Description=Fleet example media worker (replace paths)
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/model-fleet/runtime.env
+WorkingDirectory=/absolute/path/ComfyUI
+ExecStart=/absolute/path/python /absolute/path/ComfyUI/main.py --listen 127.0.0.1 --port 8190
+Restart=no
+KillMode=control-group
+TimeoutStopSec=120
+
+# No Install section: the manager owns worker startup and shutdown.

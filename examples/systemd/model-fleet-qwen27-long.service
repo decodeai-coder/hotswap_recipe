@@ -1,0 +1,14 @@
+[Unit]
+Description=Fleet model A worker (replace paths and model settings)
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/model-fleet/runtime.env
+# Replace this with a command already verified for your text model and engine.
+# The historical profile name does not validate the model loaded by this unit.
+ExecStart=/absolute/path/llama-server --model /absolute/path/model-a.gguf --host 127.0.0.1 --port 8091 --ctx-size 2048 --parallel 1 --gpu-layers 99 --threads 4
+Restart=no
+KillMode=control-group
+TimeoutStopSec=120
+
+# No Install section: the manager owns worker startup and shutdown.

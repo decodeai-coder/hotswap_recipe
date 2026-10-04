@@ -1,0 +1,14 @@
+[Unit]
+Description=Fleet model B worker (replace paths and model settings)
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/model-fleet/runtime.env
+# Both text workers share a port and GPU because only one runs at a time.
+# The hardware test used Ministral 3B Q8_0 for this legacy profile identifier.
+ExecStart=/absolute/path/llama-server --model /absolute/path/model-b.gguf --host 127.0.0.1 --port 8091 --ctx-size 2048 --parallel 1 --gpu-layers 99 --threads 4
+Restart=no
+KillMode=control-group
+TimeoutStopSec=120
+
+# No Install section: the manager owns worker startup and shutdown.

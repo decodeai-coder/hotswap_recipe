@@ -1,0 +1,13 @@
+[Unit]
+Description=Legacy Fleet model residency manager
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/model-fleet/runtime.env
+ExecStart=/usr/bin/env ${MODEL_FLEET_NODE} ${MODEL_FLEET_CODE_ROOT}/runtime.mjs
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,180 @@
+{
+  "started_at_utc": "2026-10-04T16:15:35.489317+00:00",
+  "status": "passed",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "driver": "580.142",
+  "baseline_used_mib": 4153,
+  "baseline_free_mib": 19972,
+  "background_compute_process_count": 1,
+  "runtime_sha256": "b430647149a404ed7d667d7599234fffb92ef99122cc36e6a22c6adbba93122c",
+  "node_version": "v24.14.1",
+  "engine_version": "version: 9780 (1191758c5)\nbuilt with GNU 12.2.0 for Linux x86_64",
+  "engine_binary_sha256": "a71bdaeb9e67bd136239e048753943ede2dd755ef32328f8fc60fbbd0603a2ae",
+  "context_tokens": 2048,
+  "parallel_slots": 1,
+  "gpu_layers_requested": 99,
+  "models": {
+    "a": {
+      "file": "ai9stars_G9v3-3B-Q4_K_M.gguf",
+      "sha256": "0a14c40b1cb02ec21643fb9f080d8bbfea27bb4b6e1f9f6c9ad87db5051af0a1",
+      "cuda_log_evidence": [
+        "0.02.130.913 I load_tensors: offloaded 53/53 layers to GPU",
+        "0.02.130.926 I load_tensors:        CUDA0 model buffer size =  1666.10 MiB",
+        "0.02.859.530 I llama_kv_cache:      CUDA0 KV buffer size =   104.00 MiB",
+        "0.02.879.277 I sched_reserve:      CUDA0 compute buffer size =    50.01 MiB",
+        "0.01.850.477 I load_tensors: offloaded 53/53 layers to GPU",
+        "0.01.850.485 I load_tensors:        CUDA0 model buffer size =  1666.10 MiB",
+        "0.02.579.703 I llama_kv_cache:      CUDA0 KV buffer size =   104.00 MiB",
+        "0.02.603.182 I sched_reserve:      CUDA0 compute buffer size =    50.01 MiB"
+      ]
+    },
+    "b": {
+      "file": "Ministral-3-3B-vocabfix-Q8_0.gguf",
+      "sha256": "f0059df8b250aa2a353ea29a69a89b7daaf28649fdb048ef795d237d0ed0c16f",
+      "cuda_log_evidence": [
+        "0.02.122.022 I load_tensors: offloaded 27/27 layers to GPU",
+        "0.02.122.030 I load_tensors:        CUDA0 model buffer size =  3475.00 MiB",
+        "0.03.515.770 I llama_kv_cache:      CUDA0 KV buffer size =   208.00 MiB",
+        "0.03.538.988 I sched_reserve:      CUDA0 compute buffer size =    76.01 MiB",
+        "0.02.581.346 I load_tensors: offloaded 27/27 layers to GPU",
+        "0.02.581.356 I load_tensors:        CUDA0 model buffer size =  3475.00 MiB",
+        "0.03.956.866 I llama_kv_cache:      CUDA0 KV buffer size =   208.00 MiB",
+        "0.03.975.551 I sched_reserve:      CUDA0 compute buffer size =    76.01 MiB"
+      ]
+    }
+  },
+  "steps": [
+    {
+      "step": 1,
+      "model": "a",
+      "target_profile": "qwen27-long",
+      "transition_to_ready_seconds": 5.681,
+      "worker_gpu_memory_mib": 2122,
+      "total_gpu_used_mib": 6280,
+      "total_gpu_free_mib": 17845,
+      "background_processes_preserved": true,
+      "inference_seconds": 0.116,
+      "response": "4",
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 27,
+        "total_tokens": 29,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "served_model": "fleet-test-a",
+      "semantic_check_passed": true,
+      "competing_owner_rejected_without_stopping_worker": true
+    },
+    {
+      "step": 2,
+      "model": "b",
+      "target_profile": "qwen35-long",
+      "transition_to_ready_seconds": 6.892,
+      "worker_gpu_memory_mib": 4056,
+      "total_gpu_used_mib": 8214,
+      "total_gpu_free_mib": 15911,
+      "background_processes_preserved": true,
+      "previous_worker_exited": true,
+      "previous_gpu_allocation_absent": true,
+      "previous_exit_observed_before_new_start": true,
+      "exit_observation_method": "Linux pidfd + CLOCK_MONOTONIC",
+      "previous_exit_observed_to_new_start_ms": 68.291,
+      "inference_seconds": 0.109,
+      "response": "4",
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 549,
+        "total_tokens": 551,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "served_model": "fleet-test-b",
+      "semantic_check_passed": true,
+      "competing_owner_rejected_without_stopping_worker": true
+    },
+    {
+      "step": 3,
+      "model": "a",
+      "target_profile": "qwen27-long",
+      "transition_to_ready_seconds": 5.683,
+      "worker_gpu_memory_mib": 2122,
+      "total_gpu_used_mib": 6280,
+      "total_gpu_free_mib": 17845,
+      "background_processes_preserved": true,
+      "previous_worker_exited": true,
+      "previous_gpu_allocation_absent": true,
+      "previous_exit_observed_before_new_start": true,
+      "exit_observation_method": "Linux pidfd + CLOCK_MONOTONIC",
+      "previous_exit_observed_to_new_start_ms": 63.329,
+      "inference_seconds": 0.11,
+      "response": "4",
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 27,
+        "total_tokens": 29,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "served_model": "fleet-test-a",
+      "semantic_check_passed": true,
+      "competing_owner_rejected_without_stopping_worker": true
+    },
+    {
+      "step": 4,
+      "model": "b",
+      "target_profile": "qwen35-long",
+      "transition_to_ready_seconds": 7.709,
+      "worker_gpu_memory_mib": 4056,
+      "total_gpu_used_mib": 8214,
+      "total_gpu_free_mib": 15911,
+      "background_processes_preserved": true,
+      "previous_worker_exited": true,
+      "previous_gpu_allocation_absent": true,
+      "previous_exit_observed_before_new_start": true,
+      "exit_observation_method": "Linux pidfd + CLOCK_MONOTONIC",
+      "previous_exit_observed_to_new_start_ms": 50.007,
+      "inference_seconds": 0.112,
+      "response": "4",
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 549,
+        "total_tokens": 551,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "served_model": "fleet-test-b",
+      "semantic_check_passed": true,
+      "competing_owner_rejected_without_stopping_worker": true
+    }
+  ],
+  "scope": "Two text models on one shared physical GPU; real systemd user units and inference",
+  "not_tested": [
+    "ComfyUI/H3 media",
+    "external residency leases",
+    "sticky restoration",
+    "multi-GPU scheduling"
+  ],
+  "idle": {
+    "transition_seconds": 0.953,
+    "gpu_used_mib": 4153,
+    "gpu_free_mib": 19972,
+    "delta_from_baseline_mib": 0,
+    "test_gpu_processes_absent": true,
+    "background_processes_preserved": true
+  },
+  "cleanup": {
+    "errors": [],
+    "temporary_unit_files_removed": true,
+    "background_processes_preserved": true,
+    "gpu_used_mib": 4153,
+    "gpu_free_mib": 19972,
+    "delta_from_baseline_mib": 0
+  },
+  "elapsed_seconds": 30.416,
+  "finished_at_utc": "2026-10-04T16:16:28.848333+00:00"
+}

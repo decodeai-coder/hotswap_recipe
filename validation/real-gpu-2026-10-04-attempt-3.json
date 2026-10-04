@@ -1,0 +1,81 @@
+{
+  "started_at_utc": "2026-10-04T16:13:04.117986+00:00",
+  "status": "failed",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "driver": "580.142",
+  "baseline_used_mib": 4153,
+  "baseline_free_mib": 19972,
+  "background_compute_process_count": 1,
+  "runtime_sha256": "b430647149a404ed7d667d7599234fffb92ef99122cc36e6a22c6adbba93122c",
+  "node_version": "v24.14.1",
+  "engine_version": "version: 9780 (1191758c5)\nbuilt with GNU 12.2.0 for Linux x86_64",
+  "engine_binary_sha256": "a71bdaeb9e67bd136239e048753943ede2dd755ef32328f8fc60fbbd0603a2ae",
+  "context_tokens": 2048,
+  "parallel_slots": 1,
+  "gpu_layers_requested": 99,
+  "models": {
+    "a": {
+      "file": "ai9stars_G9v3-3B-Q4_K_M.gguf",
+      "sha256": "0a14c40b1cb02ec21643fb9f080d8bbfea27bb4b6e1f9f6c9ad87db5051af0a1",
+      "cuda_log_evidence": [
+        "0.01.925.909 I load_tensors: offloaded 53/53 layers to GPU",
+        "0.01.925.918 I load_tensors:        CUDA0 model buffer size =  1666.10 MiB",
+        "0.02.650.606 I llama_kv_cache:      CUDA0 KV buffer size =   104.00 MiB",
+        "0.02.669.536 I sched_reserve:      CUDA0 compute buffer size =    50.01 MiB"
+      ]
+    },
+    "b": {
+      "file": "Ministral-3-3B-vocabfix-Q8_0.gguf",
+      "sha256": "f0059df8b250aa2a353ea29a69a89b7daaf28649fdb048ef795d237d0ed0c16f",
+      "cuda_log_evidence": [
+        "0.02.538.664 I load_tensors: offloaded 27/27 layers to GPU",
+        "0.02.538.672 I load_tensors:        CUDA0 model buffer size =  3475.00 MiB",
+        "0.03.882.261 I llama_kv_cache:      CUDA0 KV buffer size =   208.00 MiB",
+        "0.03.902.480 I sched_reserve:      CUDA0 compute buffer size =    76.01 MiB"
+      ]
+    }
+  },
+  "steps": [
+    {
+      "step": 1,
+      "model": "a",
+      "target_profile": "qwen27-long",
+      "transition_to_ready_seconds": 5.466,
+      "worker_gpu_memory_mib": 2122,
+      "total_gpu_used_mib": 6280,
+      "total_gpu_free_mib": 17845,
+      "background_processes_preserved": true,
+      "inference_seconds": 0.111,
+      "response": "4",
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 27,
+        "total_tokens": 29,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "served_model": "fleet-test-a",
+      "semantic_check_passed": true,
+      "competing_owner_rejected_without_stopping_worker": true
+    }
+  ],
+  "scope": "Two text models on one shared physical GPU; real systemd user units and inference",
+  "not_tested": [
+    "ComfyUI/H3 media",
+    "external residency leases",
+    "sticky restoration",
+    "multi-GPU scheduling"
+  ],
+  "error": "AssertionError: (0, 1102706137320)",
+  "cleanup": {
+    "errors": [],
+    "temporary_unit_files_removed": true,
+    "background_processes_preserved": true,
+    "gpu_used_mib": 4153,
+    "gpu_free_mib": 19972,
+    "delta_from_baseline_mib": 0
+  },
+  "elapsed_seconds": 16.048,
+  "finished_at_utc": "2026-10-04T16:13:43.869138+00:00"
+}

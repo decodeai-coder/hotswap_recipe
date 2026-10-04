@@ -1,0 +1,29 @@
+# Runtime state and local configuration
+.env
+.env.*
+!.env.example
+runtime.env
+state/
+output/
+external-lease.json
+*.log
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+auth.json
+
+# Dependencies, model weights, and machine files
+node_modules/
+.venv/
+venv/
+models/
+*.gguf
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+__pycache__/
+*.pyc
+.DS_Store
