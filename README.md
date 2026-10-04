@@ -1,4 +1,4 @@
-# Fleet model hot-swapping recipe
+# Model hot-swapping recipe
 
 A recipe for sharing a GPU between models: stop the managed worker that
 currently holds VRAM, start the requested worker, wait for its health endpoint,
